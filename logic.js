@@ -1,3 +1,6 @@
+const MAX_TRIAL=10
+
+
 let submitButton = document.getElementById('submit')
 let guess = document.getElementById('guess')
 let userName = document.getElementById('username')
@@ -9,6 +12,7 @@ let hintText = document.getElementById('hintText')
 let mission = document.getElementById('mission')
 let highscores = document.getElementById('highscores')
 let highscoresButton = document.getElementById('highscoresButton')
+let newGameButton = document.getElementById('new')
 
 
 submitButton.onclick = async () => {
@@ -112,6 +116,10 @@ highscoresButton.onclick = async () => {
     }
 }
 
+newGameButton.onclick = () => {
+    leftTrials.innerHTML = MAX_TRIAL
+}
+
 async function getMission() {
     let g_response = await fetch('http://localhost:8080/mission');
 
@@ -121,3 +129,4 @@ async function getMission() {
 }
 
 getMission()
+leftTrials.innerHTML = MAX_TRIAL
