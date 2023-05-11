@@ -1,0 +1,11 @@
+.non{
+    background-color: rgb(180, 180, 180);
+}
+
+.right{
+    background-color: rgb(0, 255, 0);
+}
+
+.wrong{
+    background-color: yellow;
+}

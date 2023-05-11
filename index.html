@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Super Kitty Wordle</h1>
+    <div>
+        <input type="text" id="guess" maxlength="5" placeholder="Enter your answer here.">
+        Left trials:
+        <span id="left-trials">5</span><br>
+        <span>Username: </span>
+        <input type="text" id="username" maxlength="5" placeholder="Enter user name here.">
+    </div>
+    <div>
+        <button id="submit">Submit</button>
+    </div>
+    <div>Score: <span id="score">0</span></div>
+    <div>
+        <button id="hint">Hint (costs score)</button>
+    </div>
+    <div id="hintText"></div>
+    <div id="message"></div>
+    <div>Mission: <span id="mission"></span></div>
+    <button id="highscoresButton">Show highest scores</button>
+    <div id="highscores"></div>
+    <script src="logic.js"></script>
+</body>
+</html>
