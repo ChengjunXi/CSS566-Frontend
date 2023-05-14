@@ -75,7 +75,7 @@ submitButton.onclick = async () => {
 
 hintButton.onclick = async () => {
     let response = await fetch('http://localhost:8080/hint',{
-        method: "GET",
+        method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
@@ -118,6 +118,7 @@ highscoresButton.onclick = async () => {
 
 newGameButton.onclick = () => {
     leftTrials.innerHTML = MAX_TRIAL
+    submitButton.disabled=false
 }
 
 async function getMission() {
