@@ -20,7 +20,7 @@ submitButton.onclick = async () => {
         return
     }
 
-    let response = await fetch('http://localhost:8080/guess',{
+    let response = await fetch('http://localhost:8081/guess',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ submitButton.onclick = async () => {
 }
 
 hintButton.onclick = async () => {
-    let response = await fetch('http://localhost:8080/hint',{
+    let response = await fetch('http://localhost:8081/hint',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ hintButton.onclick = async () => {
 }
 
 highscoresButton.onclick = async () => {
-    let response = await fetch('http://localhost:8080/highscores');
+    let response = await fetch('http://localhost:8081/highscores');
 
     response = await response.json()
 
@@ -122,13 +122,14 @@ newGameButton.onclick = () => {
     submitButton.disabled=false
 }
 
-// async function getMission() {
-//     let g_response = await fetch('http://localhost:8080/mission');
+async function getMission() {
+    let g_response = await fetch('http://localhost:8081/mission');
 
-//     g_response = await g_response.json()
-//     // g_response = { 'mission': 'test_mission' }
-//     mission.innerHTML=g_response['mission']
-// }
+    g_response = await g_response.json()
+    // g_response = { 'mission': 'test_mission' }
+    mission.innerHTML=g_response['mission']
+}
 
-// getMission()
+getMission()
+
 leftTrials.innerHTML = MAX_TRIAL
