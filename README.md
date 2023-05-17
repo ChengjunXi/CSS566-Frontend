@@ -15,9 +15,9 @@ Request: GET JSON {'username','answer','score'}
 
 'username' is the username. 'answer' is the answer submitted by user. 'score' is the current score.
 
-Response: JSON {'hint','score'}
+Response: JSON {'hint','score','sourceURL'}
 
-'hint' is a string to be displayed as a text message. 'score' is the new score from backend.
+'hint' is a string to be displayed as a text message. 'score' is the new score from backend. 'sourceURL' is the url to display when game finishes, both success or failed.
 
 ## 'http://localhost:8080/highscores'
 Request: GET

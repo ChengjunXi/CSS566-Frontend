@@ -38,21 +38,22 @@ submitButton.onclick = async () => {
     // //Test
     // guess.value='abble'
     // response = {
-    //     'correct': true,
-    //     'arr': [1, 1, 1, 1, 1],
-    //     'score': 10
+    //     'correct': false,
+    //     'arr': [0, -1, 1, 1, 1],
+    //     'score': 10,
+    //     'sourceURL': 'https://roamingkitty.com/'
     // }
 
     leftTrials.innerHTML = +leftTrials.innerHTML - 1
     let arr = response['arr']
 
     if (response['correct']) {
-        message.innerHTML = '<div>Success!</div>'
+        message.innerHTML = '<div>Success! '+'<a href="'+response['sourceURL']+'">Link to source</a></div>'
         score.innerHTML = response['score']
         submitButton.disabled=true
     }
     else if (+leftTrials.innerHTML === 0){
-        message.innerHTML='<div>Failed.</div>'
+        message.innerHTML='<div>Failed. '+'<a href="'+response['sourceURL']+'">Link to source</a></div>'
     }
     else {
         message.innerHTML='<div>Try again.</div>'
@@ -121,13 +122,13 @@ newGameButton.onclick = () => {
     submitButton.disabled=false
 }
 
-async function getMission() {
-    let g_response = await fetch('http://localhost:8080/mission');
+// async function getMission() {
+//     let g_response = await fetch('http://localhost:8080/mission');
 
-    g_response = await g_response.json()
-    // g_response = { 'mission': 'test_mission' }
-    mission.innerHTML=g_response['mission']
-}
+//     g_response = await g_response.json()
+//     // g_response = { 'mission': 'test_mission' }
+//     mission.innerHTML=g_response['mission']
+// }
 
-getMission()
+// getMission()
 leftTrials.innerHTML = MAX_TRIAL
