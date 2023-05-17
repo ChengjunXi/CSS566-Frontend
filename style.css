@@ -9,3 +9,80 @@
 .wrong{
     background-color: yellow;
 }
+
+#main-view{
+    width: 400px;
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+#row1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#guess{
+    width: 150px;
+    flex-basis: 150px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+#left-trials{
+    width: 20px;
+}
+
+#new{
+    width: 100px;
+    flex-basis: 100px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+#row2{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#username{
+    width: 150px;
+    flex-basis: 150px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+#submit{
+    display: block;
+    margin: auto;
+}
+
+#row4{
+    width: 15%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#hint{
+    display: block;
+    margin: auto;
+}
+
+#highscoresButton{
+    display: block;
+    margin: auto;
+}
+
+.highscore{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

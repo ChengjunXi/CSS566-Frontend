@@ -112,7 +112,7 @@ highscoresButton.onclick = async () => {
 
     highscores.innerHTML = ''
     for (let username in response) {
-        highscores.innerHTML=highscores.innerHTML+username+': '+response[username]+'<br>'
+        highscores.innerHTML=highscores.innerHTML+"<div class='highscore'><span>"+username+':</span> <span>'+response[username]+'</span></div>'
     }
 }
 
