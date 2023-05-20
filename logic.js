@@ -75,7 +75,7 @@ submitButton.onclick = async () => {
 }
 
 hintButton.onclick = async () => {
-    let response = await fetch('http://localhost/hint',{
+    let response = await fetch('http://localhost:8081/hint',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -100,7 +100,7 @@ hintButton.onclick = async () => {
 }
 
 highscoresButton.onclick = async () => {
-    let response = await fetch('http://localhost/highscores');
+    let response = await fetch('http://localhost:8081/highscores');
 
     response = await response.json()
 
@@ -123,7 +123,7 @@ newGameButton.onclick = () => {
 }
 
 async function getMission() {
-    let g_response = await fetch('http://localhost/mission');
+    let g_response = await fetch('http://localhost:8081/mission');
 
     g_response = await g_response.json()
     // g_response = { 'mission': 'test_mission' }
