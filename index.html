@@ -9,32 +9,51 @@
 <body>
     <div id="main-view">
         <h1>Super Kitty Wordle</h1>
-        <div id="row1">
-            <input type="text" id="guess" placeholder="Enter your answer here.">
-            <span>
-                Left trials:
-                <span id="left-trials">5</span>
-            </span>
-            <button id="new">New Game</button>
+        <div id="colorRow1">
+            <div id="row1">
+                <input type="text" id="guess" placeholder="Enter your answer.">
+                <span>
+                    Left trials:
+                    <span id="left-trials">5</span>
+                </span>
+                <button id="new">New Game</button>
+            </div>
         </div>
-        <div id="row2">
-            <span>Username: </span>
-            <input type="text" id="username" placeholder="Enter user name here.">
+        <div id="colorRow2">
+            <div id="row2">
+                <span>Username: </span>
+                <input type="text" id="username" placeholder="Enter user name.">
+            </div>
         </div>
-        <div id="row3">
-            <button id="submit">Submit</button>
+        <div id="colorRow3">
+            <div id="row3">
+                <button id="submit">Submit</button>
+            </div>
+            <div id="message"></div>
         </div>
-        <div id="row4">
-            Score: <span id="score">0</span></div>
-        <div>
-            <button id="hint">Hint (costs score)</button>
+        <div id="colorRow4">
+            <div id="row4">
+                Score: <span id="score">0</span>
+            </div>
         </div>
-        <div id="hintText"></div>
-        <div id="message"></div>
-        <div>Mission: <span id="mission"></span></div>
-        <button id="highscoresButton">Show highest scores</button>
-        <div id="highscores"></div>
-        <a href="https://roamingkitty.com/">Link to Roaming Kitty</a>
+        <div id="colorRow5">
+            <div>
+                <button id="hint">Hint (costs score)</button>
+            </div>
+            <div id="hintText"></div>
+        </div>
+        <div id="colorRow6">
+            <div>Mission: <span id="mission"></span></div>
+        </div>
+        <div id="colorRow7">
+            <button id="highscoresButton">Show highest scores</button>
+            <div id="highscores"></div>
+        </div>
+        <div id="colorRow8">
+            <a href="https://roamingkitty.com/">Link to Roaming Kitty</a>
+        </div>
+
+
     </div>
     <script src="logic.js"></script>
 </body>
