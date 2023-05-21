@@ -2,9 +2,9 @@
 
 # API callings:
 ## backend url 'http://localhost:8080/guess'
-Request: POST JSON {'username','answer','score','trial'}
+Request: POST JSON {'username','password','answer','score','trial'}
 
-'username' is the username. 'answer' is the answer submitted by user. 'score' is the current score. 'trial' is the number of left trials
+'username' is the username. 'password' is the credential of the user. 'answer' is the answer submitted by user. 'score' is the current score. 'trial' is the number of left trials
 
 Response: JSON {'correct','arr','score'}
 

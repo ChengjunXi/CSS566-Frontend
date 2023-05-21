@@ -13,6 +13,7 @@ let mission = document.getElementById('mission')
 let highscores = document.getElementById('highscores')
 let highscoresButton = document.getElementById('highscoresButton')
 let newGameButton = document.getElementById('new')
+let password = document.getElementById('password')
 
 
 submitButton.onclick = async () => {
@@ -27,6 +28,7 @@ submitButton.onclick = async () => {
         },
         body: JSON.stringify({
             'username': userName.value,
+            'password': password.value,
             'answer': guess.value,
             'score': +score.innerHTML,
             'trial': +leftTrials.innerHTML
