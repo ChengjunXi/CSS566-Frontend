@@ -45,6 +45,10 @@ submitButton.onclick = async () => {
     //     'score': 10,
     //     'sourceURL': 'https://roamingkitty.com/'
     // }
+    if (response.error) {
+        message.innerHTML = '<div>Error: ' + response.error + '</div>'
+        return
+    }
 
     leftTrials.innerHTML = +leftTrials.innerHTML - 1
     let arr = response['arr']
@@ -54,6 +58,7 @@ submitButton.onclick = async () => {
         score.innerHTML = response['score']
         submitButton.disabled=true
     }
+    
     else if (+leftTrials.innerHTML === 0){
         message.innerHTML='<div>Failed. '+'<a href="'+response['sourceURL']+'">Link to source</a></div>'
     }
@@ -103,21 +108,26 @@ hintButton.onclick = async () => {
 
 highscoresButton.onclick = async () => {
     let response = await fetch('http://localhost:8081/highscores');
+    response = await response.json();
 
-    response = await response.json()
+    // Ensure the highscores div is empty before appending
+    highscores.innerHTML = '';
 
-    // //Test
-    // response = {
-    //     'user1': 999,
-    //     'user2': 888,
-    //     'user3': 777
-    // }
+    for (let entry of response) {
+        // Create a new div for each entry and append it to the highscores div
+        let newScoreEntry = document.createElement("div");
+        newScoreEntry.className = "highscore";
 
-    highscores.innerHTML = ''
-    for (let username in response) {
-        highscores.innerHTML=highscores.innerHTML+"<div class='highscore'><span>"+username+':</span> <span>'+response[username]+'</span></div>'
+        // Add username and score to this div
+        newScoreEntry.innerHTML = "<span>" + entry["username"] + ": </span><span>" + entry["score"] + "</span>";
+
+        highscores.appendChild(newScoreEntry);
     }
 }
+
+
+
+
 
 newGameButton.onclick = () => {
     leftTrials.innerHTML = MAX_TRIAL
