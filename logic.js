@@ -52,18 +52,18 @@ submitButton.onclick = async () => {
 
     leftTrials.innerHTML = +leftTrials.innerHTML - 1
     let arr = response['arr']
+    score.innerHTML = response['score']
 
     if (response['correct']) {
         message.innerHTML = '<div>Success! '+'<a href="'+response['sourceURL']+'">Link to source</a></div>'
-        score.innerHTML = response['score']
         submitButton.disabled=true
     }
     
     else if (+leftTrials.innerHTML === 0){
-        message.innerHTML='<div>Failed. '+'<a href="'+response['sourceURL']+'">Link to source</a></div>'
+        message.innerHTML = '<div>Failed. ' + '<a href="' + response['sourceURL'] + '">Link to source</a></div>'
     }
     else {
-        message.innerHTML='<div>Try again.</div>'
+        message.innerHTML = '<div>Try again.</div>'
     }
     for (let i in arr) {
         let ch = document.createElement('span')
