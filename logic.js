@@ -21,7 +21,7 @@ submitButton.onclick = async () => {
         return
     }
 
-    let response = await fetch('http://localhost:8081/guess',{
+    let response = await fetch('http://34.133.96.172:8081/guess',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -82,7 +82,7 @@ submitButton.onclick = async () => {
 }
 
 hintButton.onclick = async () => {
-    let response = await fetch('http://localhost:8081/hint',{
+    let response = await fetch('http://34.133.96.172:8081/hint',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -107,7 +107,7 @@ hintButton.onclick = async () => {
 }
 
 highscoresButton.onclick = async () => {
-    let response = await fetch('http://localhost:8081/highscores');
+    let response = await fetch('http://34.133.96.172:8081/highscores');
     response = await response.json();
 
     // Ensure the highscores div is empty before appending
@@ -135,7 +135,7 @@ newGameButton.onclick = () => {
 }
 
 async function getMission() {
-    let g_response = await fetch('http://localhost:8081/mission');
+    let g_response = await fetch('http://34.133.96.172:8081/mission');
 
     g_response = await g_response.json()
     // g_response = { 'mission': 'test_mission' }
