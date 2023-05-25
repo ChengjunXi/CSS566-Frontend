@@ -46,7 +46,7 @@ submitButton.onclick = async () => {
     //     'sourceURL': 'https://roamingkitty.com/'
     // }
     if (response.error) {
-        message.innerHTML = '<div>Error: ' + response.error + '</div>'
+        message.innerHTML = '<div>Error: ' + 'entered too many letters'  + '</div>'
         return
     }
 
